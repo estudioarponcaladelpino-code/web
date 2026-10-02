@@ -142,13 +142,18 @@
     border:1px solid rgba(255,255,255,0.5);
     color:#fff;
     display:flex;align-items:center;justify-content:center;
-    font-size:1.1rem;
     text-decoration:none;
     transition:background .25s;
   }
+  .hero-icon img{
+    width:18px;height:18px;
+    object-fit:contain;
+    filter:brightness(0) invert(1);
+  }
   .hero-icon:hover{background:rgba(38,48,74,0.6);}
   @media (max-width:600px){
-    .hero-icon{width:32px;height:32px;font-size:0.95rem;}
+    .hero-icon{width:32px;height:32px;}
+    .hero-icon img{width:15px;height:15px;}
   }
 
   /* ---------- LAYOUT GENERAL ---------- */
@@ -358,30 +363,42 @@
   }
 
   /* ---------- CONTACTO Y RESERVAS ---------- */
-  .contact-buttons{
+  .contact-row{
     display:flex;
-    flex-wrap:wrap;
-    gap:16px;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    max-width:520px;
   }
-  .contact-btn{
-    display:inline-flex;
+  .contact-col{
+    flex:1;
+    display:flex;
+    flex-direction:column;
     align-items:center;
     gap:10px;
-    padding:14px 26px;
-    border-radius:999px;
-    font-family:"Work Sans", sans-serif;
-    font-weight:600;
-    font-size:1rem;
     text-decoration:none;
-    color:#fff;
-    transition:transform .2s ease, box-shadow .2s ease;
-    box-shadow:var(--shadow);
+    color:var(--ink);
   }
-  .contact-btn:hover{transform:translateY(-2px);}
-  .contact-btn.instagram{background:linear-gradient(135deg, var(--clay), var(--clay-soft));}
-  .contact-btn.whatsapp{background:var(--pine);}
-  .contact-btn.llamada{background:var(--ink);}
-  .contact-icon{font-size:1.2rem;}
+  .contact-sphere{
+    width:68px;height:68px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow);
+    transition:transform .2s ease;
+  }
+  .contact-col:hover .contact-sphere{transform:translateY(-3px);}
+  .contact-sphere img{
+    width:28px;height:28px;
+    object-fit:contain;
+    filter:brightness(0) invert(1);
+  }
+  .contact-sphere.instagram{background:linear-gradient(135deg, var(--clay), var(--clay-soft));}
+  .contact-sphere.whatsapp{background:var(--pine);}
+  .contact-sphere.llamada{background:var(--ink);}
+  .contact-label{
+    font-size:0.92rem;
+    font-weight:600;
+  }
 
   .map-wrap{
     margin-top:28px;
@@ -410,9 +427,15 @@
   <button class="hero-arrow prev" aria-label="Anterior" id="heroPrev">&#8249;</button>
   <button class="hero-arrow next" aria-label="Siguiente" id="heroNext">&#8250;</button>
   <div class="hero-contact">
-    <a class="hero-icon" href="https://instagram.com/estudioarpon_caladelpino" target="_blank" rel="noopener" aria-label="Instagram">&#128247;</a>
-    <a class="hero-icon" href="https://wa.me/34637018162?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad" target="_blank" rel="noopener" aria-label="WhatsApp">&#128172;</a>
-    <a class="hero-icon" href="tel:+34637018162" aria-label="Llamar">&#128222;</a>
+    <a class="hero-icon" href="https://instagram.com/estudioarpon_caladelpino" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="imagenes/iconos/Instagram.png" alt="Instagram">
+    </a>
+    <a class="hero-icon" href="https://wa.me/34637018162?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <img src="imagenes/iconos/whatsapp.png" alt="WhatsApp">
+    </a>
+    <a class="hero-icon" href="tel:+34637018162" aria-label="Llamar">
+      <img src="imagenes/iconos/llamada.png" alt="Llamada">
+    </a>
   </div>
   <div class="hero-copy">
     <span class="eyebrow">Alojamiento Vacacional</span>
@@ -447,15 +470,18 @@
       <h2>Contacto y Reservas</h2>
       <p>Escríbenos directamente para consultar disponibilidad o resolver cualquier duda.</p>
     </div>
-    <div class="contact-buttons">
-      <a class="contact-btn instagram" href="https://instagram.com/estudioarpon_caladelpino" target="_blank" rel="noopener">
-        <span class="contact-icon">&#128247;</span> Instagram
+    <div class="contact-row">
+      <a class="contact-col" href="https://instagram.com/estudioarpon_caladelpino" target="_blank" rel="noopener">
+        <span class="contact-sphere instagram"><img src="imagenes/iconos/Instagram.png" alt="Instagram"></span>
+        <span class="contact-label">Instagram</span>
       </a>
-      <a class="contact-btn whatsapp" href="https://wa.me/34637018162?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad" target="_blank" rel="noopener">
-        <span class="contact-icon">&#128172;</span> WhatsApp
+      <a class="contact-col" href="https://wa.me/34637018162?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad" target="_blank" rel="noopener">
+        <span class="contact-sphere whatsapp"><img src="imagenes/iconos/whatsapp.png" alt="WhatsApp"></span>
+        <span class="contact-label">WhatsApp</span>
       </a>
-      <a class="contact-btn llamada" href="tel:+34637018162">
-        <span class="contact-icon">&#128222;</span> Llamar
+      <a class="contact-col" href="tel:+34637018162">
+        <span class="contact-sphere llamada"><img src="imagenes/iconos/llamada.png" alt="Llamada"></span>
+        <span class="contact-label">Llamada</span>
       </a>
     </div>
     <div class="map-wrap">
