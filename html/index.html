@@ -127,6 +127,29 @@
   @media (max-width:600px){
     .hero-arrow{width:34px;height:34px;font-size:1rem;}
   }
+  .hero-contact{
+    position:absolute;
+    top:clamp(14px,3vw,24px);
+    right:clamp(14px,3vw,24px);
+    display:flex;
+    gap:8px;
+    z-index:5;
+  }
+  .hero-icon{
+    width:38px;height:38px;
+    border-radius:50%;
+    background:rgba(38,48,74,0.35);
+    border:1px solid rgba(255,255,255,0.5);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.1rem;
+    text-decoration:none;
+    transition:background .25s;
+  }
+  .hero-icon:hover{background:rgba(38,48,74,0.6);}
+  @media (max-width:600px){
+    .hero-icon{width:32px;height:32px;font-size:0.95rem;}
+  }
 
   /* ---------- LAYOUT GENERAL ---------- */
   main{
@@ -334,6 +357,41 @@
     font-size:0.95rem;
   }
 
+  /* ---------- CONTACTO Y RESERVAS ---------- */
+  .contact-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .contact-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 26px;
+    border-radius:999px;
+    font-family:"Work Sans", sans-serif;
+    font-weight:600;
+    font-size:1rem;
+    text-decoration:none;
+    color:#fff;
+    transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:var(--shadow);
+  }
+  .contact-btn:hover{transform:translateY(-2px);}
+  .contact-btn.instagram{background:linear-gradient(135deg, var(--clay), var(--clay-soft));}
+  .contact-btn.whatsapp{background:var(--pine);}
+  .contact-btn.llamada{background:var(--ink);}
+  .contact-icon{font-size:1.2rem;}
+
+  .map-wrap{
+    margin-top:28px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+  .map-wrap iframe{display:block;}
+
   footer{
     text-align:center;
     padding:28px 16px 40px;
@@ -351,6 +409,11 @@
   </div>
   <button class="hero-arrow prev" aria-label="Anterior" id="heroPrev">&#8249;</button>
   <button class="hero-arrow next" aria-label="Siguiente" id="heroNext">&#8250;</button>
+  <div class="hero-contact">
+    <a class="hero-icon" href="https://instagram.com/estudioarpon_caladelpino" target="_blank" rel="noopener" aria-label="Instagram">&#128247;</a>
+    <a class="hero-icon" href="https://wa.me/34637018162?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad" target="_blank" rel="noopener" aria-label="WhatsApp">&#128172;</a>
+    <a class="hero-icon" href="tel:+34637018162" aria-label="Llamar">&#128222;</a>
+  </div>
   <div class="hero-copy">
     <span class="eyebrow">Alojamiento Vacacional</span>
     <h1>Estudio Arpón</h1>
@@ -376,6 +439,32 @@
       <p>Todos los extras que incluye el alojamiento, organizado por Categorías.</p>
     </div>
     <div class="accordion" id="accordion"></div>
+  </section>
+
+  <!-- ============ CONTACTO Y RESERVAS ============ -->
+  <section id="contacto">
+    <div class="section-head">
+      <h2>Contacto y Reservas</h2>
+      <p>Escríbenos directamente para consultar disponibilidad o resolver cualquier duda.</p>
+    </div>
+    <div class="contact-buttons">
+      <a class="contact-btn instagram" href="https://instagram.com/estudioarpon_caladelpino" target="_blank" rel="noopener">
+        <span class="contact-icon">&#128247;</span> Instagram
+      </a>
+      <a class="contact-btn whatsapp" href="https://wa.me/34637018162?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad" target="_blank" rel="noopener">
+        <span class="contact-icon">&#128172;</span> WhatsApp
+      </a>
+      <a class="contact-btn llamada" href="tel:+34637018162">
+        <span class="contact-icon">&#128222;</span> Llamar
+      </a>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=Edificio+Arp%C3%B3n+1,+30380+La+Manga,+Murcia&output=embed"
+        width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" title="Ubicación del alojamiento">
+      </iframe>
+    </div>
   </section>
 
 </main>
