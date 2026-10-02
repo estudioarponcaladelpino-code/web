@@ -380,21 +380,14 @@
     color:var(--ink);
   }
   .contact-sphere{
-    width:68px;height:68px;
-    border-radius:50%;
     display:flex;align-items:center;justify-content:center;
-    box-shadow:var(--shadow);
     transition:transform .2s ease;
   }
   .contact-col:hover .contact-sphere{transform:translateY(-3px);}
   .contact-sphere img{
-    width:28px;height:28px;
+    width:56px;height:56px;
     object-fit:contain;
-    filter:brightness(0) invert(1);
   }
-  .contact-sphere.instagram{background:linear-gradient(135deg, var(--clay), var(--clay-soft));}
-  .contact-sphere.whatsapp{background:var(--pine);}
-  .contact-sphere.llamada{background:var(--ink);}
   .contact-label{
     font-size:0.92rem;
     font-weight:600;
@@ -428,7 +421,7 @@
   <button class="hero-arrow next" aria-label="Siguiente" id="heroNext">&#8250;</button>
   <div class="hero-contact">
     <a class="hero-icon" href="https://instagram.com/estudioarpon_caladelpino" target="_blank" rel="noopener" aria-label="Instagram">
-      <img src="imagenes/iconos/Instagram.png" alt="Instagram">
+      <img src="imagenes/iconos/instagram.png" alt="Instagram">
     </a>
     <a class="hero-icon" href="https://wa.me/34637018162?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad" target="_blank" rel="noopener" aria-label="WhatsApp">
       <img src="imagenes/iconos/whatsapp.png" alt="WhatsApp">
@@ -472,7 +465,7 @@
     </div>
     <div class="contact-row">
       <a class="contact-col" href="https://instagram.com/estudioarpon_caladelpino" target="_blank" rel="noopener">
-        <span class="contact-sphere instagram"><img src="imagenes/iconos/Instagram.png" alt="Instagram"></span>
+        <span class="contact-sphere instagram"><img src="imagenes/iconos/instagram.png" alt="Instagram"></span>
         <span class="contact-label">Instagram</span>
       </a>
       <a class="contact-col" href="https://wa.me/34637018162?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad" target="_blank" rel="noopener">
